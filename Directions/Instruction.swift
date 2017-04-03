@@ -11,6 +11,15 @@ enum Instruction {
     case right
 }
 
+enum MixedDirections {
+    case left
+    case right
+    case EAST
+    case WEST
+    case NORTH
+    case SOUTH
+}
+
 
 func turn(_ instruction: Instruction, fromFacing direction: CardinalDirection) -> CardinalDirection {
     switch (instruction, direction) {
@@ -62,7 +71,55 @@ func travelMultiple(startingLocation: Location, facingDirection: CardinalDirecti
     return (currentLocation, currentDirection)
 }
 
-
+func travelMultipleSteps3(startingLocation: Location, instructions: [(MixedDirections, Int)]) -> Location {
+    var currentLocation = startingLocation
+    var currentDirection: MixedDirections = .NORTH
+    for instruction in instructions {
+        switch instruction.0 {
+        case .EAST:
+            currentLocation.x = currentLocation.x + instruction.1
+            currentDirection = .EAST
+        case .WEST:
+            currentLocation.x = currentLocation.x - instruction.1
+            currentDirection = .WEST
+        case .SOUTH:
+            currentLocation.y = currentLocation.y - instruction.1
+            currentDirection = .SOUTH
+        case .NORTH:
+            currentLocation.y = currentLocation.y + instruction.1
+            currentDirection = .NORTH
+        case .left:
+            if currentDirection == .NORTH {
+                currentDirection = .WEST
+                currentLocation.x = currentLocation.x - instruction.1
+            } else if currentDirection == .SOUTH {
+                currentDirection = .EAST
+                currentLocation.x = currentLocation.x + instruction.1
+            } else if currentDirection == .EAST {
+                currentDirection = .NORTH
+                currentLocation.y = currentLocation.y + instruction.1
+            } else {
+                currentDirection = .SOUTH
+                currentLocation.y = currentLocation.y - instruction.1
+            }
+        case .right:
+            if currentDirection == .NORTH {
+                currentDirection = .EAST
+                currentLocation.x = currentLocation.x + instruction.1
+            } else if currentDirection == .SOUTH {
+                currentDirection = .WEST
+                currentLocation.x = currentLocation.x - instruction.1
+            } else if currentDirection == .EAST {
+                currentDirection = .SOUTH
+                currentLocation.y = currentLocation.y - instruction.1
+            } else {
+                currentDirection = .NORTH
+                currentLocation.y = currentLocation.y + instruction.1
+            }
+        }
+    }
+    return currentLocation
+}
 
 
 

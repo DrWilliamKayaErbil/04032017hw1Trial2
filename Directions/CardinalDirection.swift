@@ -23,3 +23,20 @@ func measureDistance(_ startingLocation: Location,_ finalLocation: Location) -> 
     return distance
 }
 
+func travelMultipleSteps2(startingLocation: Location, instructions: [(CardinalDirection, Int)]) -> Location {
+    var travelLocation = startingLocation
+    for instruction in instructions {
+        switch instruction.0 {
+        case .east:
+            travelLocation.x = travelLocation.x + instruction.1
+        case .west:
+            travelLocation.x = travelLocation.x - instruction.1
+        case .south:
+            travelLocation.y = travelLocation.y - instruction.1
+        case .north:
+            travelLocation.y = travelLocation.y + instruction.1
+        }
+    }
+    return travelLocation
+}
+
