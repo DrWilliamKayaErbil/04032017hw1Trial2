@@ -10,27 +10,44 @@ import XCTest
 @testable import Directions
 
 class DirectionsTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testTurnLeftFromFacingNorth() {
+        let result = turn(.left, fromFacing: .north)
+        let expected = CardinalDirection.west
+        XCTAssertEqual(result, expected)
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testTurnRightFromFacingNorth() {
+        let result = turn(.right, fromFacing: .north)
+        let expected = CardinalDirection.east
+        XCTAssertEqual(result, expected)
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testTurnLeftFromFacingSouth() {
+        let result = turn(.left, fromFacing: .south)
+        let expected = CardinalDirection.east
+        XCTAssertEqual(result, expected)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testTurnRightFromFacingSouth() {
+        let result = turn(.right, fromFacing: .south)
+        let expected = CardinalDirection.west
+        XCTAssertEqual(result, expected)
     }
-    
+    func testTurnLeftFromFacingEast() {
+        let result = turn(.left, fromFacing: .east)
+        let expected = CardinalDirection.north
+        XCTAssertEqual(result, expected)
+    }
+    func testTurnLeftFromFacingWest() {
+        let result = turn(.left, fromFacing: .west)
+        let expected = CardinalDirection.south
+        XCTAssertEqual(result, expected)
+    }
+    func testTurnRightFromFacingEast() {
+        let result = turn(.right, fromFacing: .east)
+        let expected = CardinalDirection.south
+        XCTAssertEqual(result, expected)
+    }
+    func testTurnRightFromFacingWest() {
+        let result = turn(.right, fromFacing: .west)
+        let expected = CardinalDirection.north
+        XCTAssertEqual(result, expected)
+    }
 }

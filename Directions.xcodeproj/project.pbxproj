@@ -10,6 +10,11 @@
 		896C3C751E9019B6003C912B /* Directions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896C3C6B1E9019B6003C912B /* Directions.framework */; };
 		896C3C7A1E9019B6003C912B /* DirectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C3C791E9019B6003C912B /* DirectionsTests.swift */; };
 		896C3C7C1E9019B6003C912B /* Directions.h in Headers */ = {isa = PBXBuildFile; fileRef = 896C3C6E1E9019B6003C912B /* Directions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		896C3C861E901E10003C912B /* CardinalDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C3C851E901E10003C912B /* CardinalDirection.swift */; };
+		896C3C881E901E6F003C912B /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C3C871E901E6F003C912B /* Instruction.swift */; };
+		896C3C8A1E903099003C912B /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C3C891E903099003C912B /* LocationTests.swift */; };
+		896C3C8C1E9041EF003C912B /* CountBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C3C8B1E9041EF003C912B /* CountBlocks.swift */; };
+		89BE749A1E919BA00097189A /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BE74991E919BA00097189A /* MainTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +34,11 @@
 		896C3C741E9019B6003C912B /* DirectionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DirectionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		896C3C791E9019B6003C912B /* DirectionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsTests.swift; sourceTree = "<group>"; };
 		896C3C7B1E9019B6003C912B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		896C3C851E901E10003C912B /* CardinalDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardinalDirection.swift; sourceTree = "<group>"; };
+		896C3C871E901E6F003C912B /* Instruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instruction.swift; sourceTree = "<group>"; };
+		896C3C891E903099003C912B /* LocationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
+		896C3C8B1E9041EF003C912B /* CountBlocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountBlocks.swift; sourceTree = "<group>"; };
+		89BE74991E919BA00097189A /* MainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				896C3C6E1E9019B6003C912B /* Directions.h */,
+				896C3C851E901E10003C912B /* CardinalDirection.swift */,
+				896C3C871E901E6F003C912B /* Instruction.swift */,
 				896C3C6F1E9019B6003C912B /* Info.plist */,
 			);
 			path = Directions;
@@ -82,6 +94,9 @@
 			children = (
 				896C3C791E9019B6003C912B /* DirectionsTests.swift */,
 				896C3C7B1E9019B6003C912B /* Info.plist */,
+				896C3C891E903099003C912B /* LocationTests.swift */,
+				896C3C8B1E9041EF003C912B /* CountBlocks.swift */,
+				89BE74991E919BA00097189A /* MainTests.swift */,
 			);
 			path = DirectionsTests;
 			sourceTree = "<group>";
@@ -149,6 +164,7 @@
 					896C3C6A1E9019B5003C912B = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 2KBQAJM853;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					896C3C731E9019B6003C912B = {
@@ -198,6 +214,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				896C3C881E901E6F003C912B /* Instruction.swift in Sources */,
+				896C3C861E901E10003C912B /* CardinalDirection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +223,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				896C3C8A1E903099003C912B /* LocationTests.swift in Sources */,
+				896C3C8C1E9041EF003C912B /* CountBlocks.swift in Sources */,
+				89BE749A1E919BA00097189A /* MainTests.swift in Sources */,
 				896C3C7A1E9019B6003C912B /* DirectionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +345,7 @@
 		896C3C801E9019B6003C912B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2KBQAJM853;
@@ -336,6 +358,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Directions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -343,6 +366,7 @@
 		896C3C811E9019B6003C912B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 2KBQAJM853;
@@ -362,6 +386,7 @@
 		896C3C831E9019B6003C912B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 2KBQAJM853;
 				INFOPLIST_FILE = DirectionsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -374,6 +399,7 @@
 		896C3C841E9019B6003C912B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 2KBQAJM853;
 				INFOPLIST_FILE = DirectionsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -402,6 +428,7 @@
 				896C3C811E9019B6003C912B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		896C3C821E9019B6003C912B /* Build configuration list for PBXNativeTarget "DirectionsTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +437,7 @@
 				896C3C841E9019B6003C912B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
